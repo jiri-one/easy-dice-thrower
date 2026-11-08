@@ -1,0 +1,509 @@
+{
+  "@@locale": "en",
+  "appTitle": "Easy Dice Thrower",
+  "@appTitle": {
+    "description": "Application name; keep unchanged."
+  },
+  "languageName": "English",
+  "@languageName": {
+    "description": "The name of this language written in the language itself."
+  },
+  "languageTitle": "Language",
+  "@languageTitle": {
+    "description": "Title of the language selection dialog and its accessible button label."
+  },
+  "deviceLanguage": "Use device language",
+  "@deviceLanguage": {
+    "description": "Use the device or browser language rather than a saved override."
+  },
+  "appTagline": "Your dice, your game.",
+  "@appTagline": {
+    "description": "Short tagline below the application name."
+  },
+  "loadingTray": "Loading your dice…",
+  "@loadingTray": {
+    "description": "Shown while loading the saved tray."
+  },
+  "saveSetTitle": "Save set",
+  "@saveSetTitle": {
+    "description": "Title of the dialog for saving the current dice selection."
+  },
+  "saveSetHelp": "Saves the dice selection. Loading a set starts fresh rolls.",
+  "@saveSetHelp": {
+    "description": "Saved named sets contain definitions, unlike the automatically saved current results."
+  },
+  "setNameLabel": "Set name",
+  "@setNameLabel": {
+    "description": "Label of the user-defined set name field."
+  },
+  "setNameHint": "For example, Friday game",
+  "@setNameHint": {
+    "description": "Example name for a custom set."
+  },
+  "requiredSetName": "Enter a set name.",
+  "@requiredSetName": {
+    "description": "Validation message for an empty set name."
+  },
+  "nameTooLong": "The name can have at most 48 characters.",
+  "@nameTooLong": {
+    "description": "Validation for names of dice and sets."
+  },
+  "overwriteSetWarning": "The saved set with this name will be replaced.",
+  "@overwriteSetWarning": {
+    "description": "Warning when saving over a named set."
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Dismiss a dialog without applying changes."
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button and compact save action on the tray."
+  },
+  "overwriteSet": "Replace set",
+  "@overwriteSet": {
+    "description": "Explicit action to overwrite an existing named set."
+  },
+  "setsTitle": "Dice sets",
+  "@setsTitle": {
+    "description": "Title of the preset and saved set picker."
+  },
+  "chooseSetHelp": "Choose a starting tray. You can change every die afterwards.",
+  "@chooseSetHelp": {
+    "description": "Built-in presets do not lock any dice."
+  },
+  "presetsSection": "PRESETS",
+  "@presetsSection": {
+    "description": "Section heading for built-in dice presets."
+  },
+  "yourSetsSection": "YOUR SETS",
+  "@yourSetsSection": {
+    "description": "Section heading for user-saved sets."
+  },
+  "saveCurrentTray": "Save current tray",
+  "@saveCurrentTray": {
+    "description": "Action in the set picker to save the current selection."
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Dismiss a picker or an informational dialog."
+  },
+  "startEmpty": "Start without dice",
+  "@startEmpty": {
+    "description": "Description of the empty tray preset."
+  },
+  "loadSetAction": "Load set {name}",
+  "@loadSetAction": {
+    "description": "Accessible label for a saved or built-in set.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSetAction": "Delete saved set {name}",
+  "@deleteSetAction": {
+    "description": "Accessible label for the delete button of a saved set.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSetQuestion": "Delete set “{name}”?",
+  "@deleteSetQuestion": {
+    "description": "Confirmation before deleting a named set; name is user content.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSetHelp": "The dice on your current tray will stay.",
+  "@deleteSetHelp": {
+    "description": "Deleting a saved set does not clear the current tray."
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Confirm deletion of a named set."
+  },
+  "modifiedTray": "Modified tray",
+  "@modifiedTray": {
+    "description": "Badge for a composition that differs from the loaded set."
+  },
+  "editHint": "− removes a die, the pencil changes its type, + adds a copy.",
+  "@editHint": {
+    "description": "Description of the three controls below each die in edit mode."
+  },
+  "rollHint": "Tap to roll one die. Swipe left or right anywhere to roll all.",
+  "rollHelpTitle": "Dice controls",
+  "trayMenuTitle": "Menu",
+  "@trayMenuTitle": {
+    "description": "Title and accessible label for the collapsed portrait tray menu."
+  },
+  "@rollHelpTitle": {
+    "description": "Title and accessible label for dice gesture help."
+  },
+  "@rollHint": {
+    "description": "A tap rolls one die; horizontal swipes anywhere roll all dice; vertical swipes scroll."
+  },
+  "emptyFooter": "Save any tray for your next game.",
+  "@emptyFooter": {
+    "description": "Footer when there are no dice on the tray."
+  },
+  "diceOnTray": "{count, plural, =0{No dice on the tray} =1{1 die on the tray} other{{count} dice on the tray}} · Your tray and latest rolls are saved automatically.",
+  "@diceOnTray": {
+    "description": "Tray footer; count is the number of individual dice, not faces.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rollAll": "Roll all",
+  "@rollAll": {
+    "description": "Roll all dice on the current tray."
+  },
+  "addDice": "Add dice",
+  "@addDice": {
+    "description": "Open the dice editor to add one or more dice; also its dialog title."
+  },
+  "sets": "Sets",
+  "@sets": {
+    "description": "Compact button opening the set picker."
+  },
+  "done": "Done",
+  "@done": {
+    "description": "Finish editing the tray."
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Enable the controls for modifying individual dice."
+  },
+  "emptyTrayTitle": "Room for your dice",
+  "@emptyTrayTitle": {
+    "description": "Heading shown on an empty tray."
+  },
+  "emptyTrayHelp": "Add numeric dice, mercenary swords, or your own text faces.",
+  "@emptyTrayHelp": {
+    "description": "Explains the three supported types on an empty tray."
+  },
+  "addFirstDie": "Add your first die",
+  "@addFirstDie": {
+    "description": "Main action on an empty tray."
+  },
+  "dismissMessage": "Dismiss message",
+  "@dismissMessage": {
+    "description": "Accessible label of the error banner close button."
+  },
+  "editDieTitle": "Edit die",
+  "@editDieTitle": {
+    "description": "Title of the editor for an existing die."
+  },
+  "numericKind": "Numbers",
+  "@numericKind": {
+    "description": "Editor tab for dice with numeric faces."
+  },
+  "mercenaryKind": "Swords",
+  "@mercenaryKind": {
+    "description": "Editor tab for the six-sided mercenary die."
+  },
+  "textKind": "Text",
+  "@textKind": {
+    "description": "Editor tab for custom text faces."
+  },
+  "sidesLabel": "Number of sides",
+  "@sidesLabel": {
+    "description": "Numeric die side count field."
+  },
+  "invalidSides": "Enter a side count from 2 to 1,000,000.",
+  "@invalidSides": {
+    "description": "Validation of the numeric die side count."
+  },
+  "mercenaryMappingHelp": "d6: 1–3 blank, 4–5 one sword, 6 two swords.",
+  "@mercenaryMappingHelp": {
+    "description": "Explains the physical face mapping; preserve these ranges."
+  },
+  "facesLabel": "Die faces",
+  "@facesLabel": {
+    "description": "Multiline field defining physical text faces."
+  },
+  "facesHint": "Yes\nNo\n—",
+  "@facesHint": {
+    "description": "Example of three physical faces on separate lines; em dash means blank."
+  },
+  "facesHelp": "One line = one physical face. Repeat text to change its probability. Empty lines or — represent blank faces.",
+  "@facesHelp": {
+    "description": "Explains physical rows and both supported blank-face forms."
+  },
+  "invalidFaceCount": "Enter 2 to 100 faces, each on a separate line.",
+  "@invalidFaceCount": {
+    "description": "Validation of the number of custom physical faces."
+  },
+  "blankFaceHint": "Use — for a blank face.",
+  "@blankFaceHint": {
+    "description": "Validation for empty lines in the custom faces field."
+  },
+  "faceTextTooLong": "A face label can have at most 80 characters.",
+  "@faceTextTooLong": {
+    "description": "Validation of an individual custom face label."
+  },
+  "dieNameLabel": "Die name (optional)",
+  "@dieNameLabel": {
+    "description": "User alias for a die; leaving it empty uses the localized default."
+  },
+  "diceCountLabel": "Number of dice",
+  "@diceCountLabel": {
+    "description": "How many copies to add; this is distinct from the side count."
+  },
+  "invalidDiceCount": "Enter a dice count from 1 to 100.",
+  "@invalidDiceCount": {
+    "description": "Validation of the number of copies to add."
+  },
+  "resetRollHelp": "The last roll for this die will be cleared.",
+  "@resetRollHelp": {
+    "description": "Shown when editing the definition of an existing die."
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Confirm adding the configured dice."
+  },
+  "saveChanges": "Save changes",
+  "@saveChanges": {
+    "description": "Confirm editing an existing die."
+  },
+  "customDieName": "Custom d{sides}",
+  "@customDieName": {
+    "description": "Default name for an unnamed text die.",
+    "placeholders": {
+      "sides": {
+        "type": "int"
+      }
+    }
+  },
+  "mercenaryDieName": "Mercenary d6",
+  "@mercenaryDieName": {
+    "description": "Default name of the sword die; a custom user alias stays unchanged."
+  },
+  "presetMercenaries": "Mercenaries",
+  "@presetMercenaries": {
+    "description": "Built-in starting tray for the Czech game Žoldnéři."
+  },
+  "presetClassic": "Classic dice",
+  "@presetClassic": {
+    "description": "Built-in tray with two ordinary d6 dice."
+  },
+  "presetRpg": "RPG",
+  "@presetRpg": {
+    "description": "Built-in tray with common polyhedral dice."
+  },
+  "presetEmpty": "Empty tray",
+  "@presetEmpty": {
+    "description": "Built-in preset with no dice."
+  },
+  "customTray": "Custom tray",
+  "@customTray": {
+    "description": "Default title when the current tray has no saved name or preset."
+  },
+  "blankFace": "Blank",
+  "@blankFace": {
+    "description": "Outcome of a physical blank face, including custom blank text faces."
+  },
+  "oneSword": "One sword",
+  "@oneSword": {
+    "description": "Outcome with one sword."
+  },
+  "twoSwords": "Two swords",
+  "@twoSwords": {
+    "description": "Outcome with two swords."
+  },
+  "notRolled": "Not rolled yet",
+  "@notRolled": {
+    "description": "Accessible description before the first roll."
+  },
+  "dieSemantics": "Die {position}, {name}. {result}.",
+  "@dieSemantics": {
+    "description": "Full accessible button label for a die. Name and result can contain user text.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      },
+      "result": {
+        "type": "String"
+      }
+    }
+  },
+  "rolledSemantics": "{result}, roll {count}",
+  "@rolledSemantics": {
+    "description": "Accessible result includes the count so repeated outcomes are announced.",
+    "placeholders": {
+      "result": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rolling": "Rolling…",
+  "@rolling": {
+    "description": "Static status while waiting for a roll, with no animation."
+  },
+  "rollPrompt": "Tap to roll",
+  "@rollPrompt": {
+    "description": "Prompt below an unrolled die."
+  },
+  "rollNumber": "Roll {count}",
+  "@rollNumber": {
+    "description": "Counter below a numeric or text die.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "faceRollNumber": "{result} · roll {count}",
+  "@faceRollNumber": {
+    "description": "Outcome and counter below a mercenary die.",
+    "placeholders": {
+      "result": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "removeDieAction": "Remove die {position}",
+  "@removeDieAction": {
+    "description": "Accessible label of the minus control for a die.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "editDieAction": "Edit die {position}",
+  "@editDieAction": {
+    "description": "Accessible label of the pencil control for a die.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "duplicateDieAction": "Duplicate die {position}",
+  "@duplicateDieAction": {
+    "description": "Accessible label of the plus control for a die.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "loadFailed": "Could not load the saved tray. Changes are not being saved, to protect your stored dice and sets.",
+  "@loadFailed": {
+    "description": "Shown after a read failure; saving stays blocked until retry or explicit replacement."
+  },
+  "saveFailed": "Could not save the changes. They may be lost when you close the app.",
+  "@saveFailed": {
+    "description": "Nonfatal persistence failure."
+  },
+  "rollFailed": "The roll failed. Please try again.",
+  "@rollFailed": {
+    "description": "Failure of the roll provider or an invalid result."
+  },
+  "trayFull": "The tray can hold at most 100 dice.",
+  "@trayFull": {
+    "description": "Adding dice would exceed the tray limit."
+  },
+  "invalidSetName": "Enter a set name of up to 48 characters.",
+  "@invalidSetName": {
+    "description": "Controller validation fallback for a saved set name."
+  },
+  "orientationTitle": "Screen orientation",
+  "@orientationTitle": {
+    "description": "Title and accessible label for the mobile orientation picker."
+  },
+  "portraitOrientation": "Portrait",
+  "@portraitOrientation": {
+    "description": "Lock the phone to its upright portrait orientation."
+  },
+  "landscapeOrientation": "Landscape",
+  "@landscapeOrientation": {
+    "description": "Lock the phone to a single fixed landscape orientation."
+  },
+  "orientationHelp": "Choose how to hold your phone. The orientation stays locked until you change it here.",
+  "@orientationHelp": {
+    "description": "Explains that both choices are fixed; there is no automatic rotation."
+  },
+  "orientationLockFailed": "Could not lock the screen orientation. Try selecting it again.",
+  "@orientationLockFailed": {
+    "description": "Shown if the native orientation request fails."
+  },
+  "remainingDice": "{count, plural, =0{There is no room for another die.} one{There is room for only one more die.} other{There is room for only {count} more dice.}}",
+  "@remainingDice": {
+    "description": "Validation when the requested copies exceed the remaining tray capacity.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fullResult": "Full result",
+  "@fullResult": {
+    "description": "Opens the complete current text outcome without rolling again."
+  },
+  "showResultAction": "Show full result of die {position}",
+  "@showResultAction": {
+    "description": "Accessible label for the full-result action of one die.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "retryLoad": "Try loading again",
+  "@retryLoad": {
+    "description": "Retries reading saved state without writing over it."
+  },
+  "replaceSavedData": "Replace saved data",
+  "@replaceSavedData": {
+    "description": "Opens confirmation before replacing data that could not be loaded."
+  },
+  "replaceSavedDataTitle": "Replace the stored dice and sets?",
+  "@replaceSavedDataTitle": {
+    "description": "Confirmation title after a failed saved-state read."
+  },
+  "replaceSavedDataHelp": "This replaces the unread stored data with the tray currently on screen. Previously saved sets will be lost. Try loading again first if you want to recover them.",
+  "@replaceSavedDataHelp": {
+    "description": "Explains the consequence of explicitly restarting persistence after a load failure."
+  },
+  "faceCountSummary": "{count, plural, one{1 face} other{{count} faces}} · {blankCount, plural, one{1 blank} other{{blankCount} blank}}",
+  "@faceCountSummary": {
+    "description": "Live physical-face and blank-face counts, including edge newlines.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "blankCount": {
+        "type": "int"
+      }
+    }
+  },
+  "switchSetTitle": "Replace the current tray?",
+  "@switchSetTitle": {
+    "description": "Confirmation before loading another set would discard edited dice or rolled results."
+  },
+  "switchSetHelp": "This replaces the dice on screen and clears their results. To keep this selection of dice, cancel and save it as a named set first.",
+  "@switchSetHelp": {
+    "description": "Explains that loading a set replaces the tray and results, and offers a way to keep its composition."
+  },
+  "switchSet": "Load set",
+  "@switchSet": {
+    "description": "Confirms replacing the current tray with the selected set."
+  }
+}

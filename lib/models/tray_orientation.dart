@@ -1,0 +1,1 @@
+enum TrayOrientation { portrait, landscape }

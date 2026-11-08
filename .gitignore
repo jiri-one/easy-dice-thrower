@@ -3,10 +3,16 @@
 .packages
 .pub-cache/
 .pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+.ai/
+private/
+.wrangler/
+pictures/
 build/
+lib/l10n/generated/
 # Obsolete files
 *.swp
-*.lock
 # IntelliJ related
 .idea/
 *.iml
@@ -15,12 +21,13 @@ build/
 # macOS
 .DS_Store
 # Android
-android/
 android/.gradle/
+android/.kotlin/
 android/app/debug/
 android/app/profile/
 android/app/release/
 android/local.properties
+android/**/GeneratedPluginRegistrant.java
 # iOS
 ios/
 ios/Flutter/App.framework
@@ -34,7 +41,6 @@ ios/build/
 # Web
 web/.dart_tool/
 web/build/
-web/
 # Linux
 linux/
 linux/flutter/ephemeral/

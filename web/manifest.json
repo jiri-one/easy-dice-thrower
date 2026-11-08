@@ -1,0 +1,26 @@
+{
+  "name": "Easy Dice Thrower",
+  "short_name": "Easy Dice",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "Numeric dice, mercenary swords and custom trays for e-ink screens.",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icons/dice-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/dice-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "./",
+  "scope": "./"
+}
