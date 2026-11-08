@@ -58,6 +58,8 @@ class TrayController extends ChangeNotifier {
   bool get ready => _ready;
   bool get recoveryRequired => _loadFailed;
   bool get busy => _rolling.isNotEmpty;
+  bool get canResetRollCounts =>
+      _ready && !_disposed && !busy && _dice.any((die) => die.rollCount > 0);
   TrayMessage? get storageWarning => _storageWarning;
   TrayMessage? get operationError => _operationError;
   Future<void> get saved => _saveTail;
@@ -239,6 +241,16 @@ class TrayController extends ChangeNotifier {
 
   Future<void> rollDie(int id) async {
     if (await _roll(id)) _save();
+  }
+
+  bool resetRollCounts() {
+    if (!canResetRollCounts) return false;
+    _dice = [
+      for (final die in _dice)
+        TrayDie(id: die.id, definition: die.definition, value: die.value),
+    ];
+    _changed();
+    return true;
   }
 
   Future<void> rollAll() async {

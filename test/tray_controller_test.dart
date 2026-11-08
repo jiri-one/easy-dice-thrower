@@ -85,6 +85,81 @@ void main() {
     },
   );
 
+  test(
+    'reset counters preserves results, composition and saved state',
+    () async {
+      final store = MemoryStore();
+      final tray = TrayController(store: store, roller: (sides) async => sides);
+      addTearDown(tray.dispose);
+      await tray.load();
+      tray.addDice(DieDefinition.text('Odpověď', ['Ano', 'Ne', '']), 1);
+      tray.setLanguage('cs');
+      tray.setOrientation(TrayOrientation.landscape);
+      tray.saveSet('Campaign');
+      await tray.rollAll();
+      await tray.rollDie(tray.dice.first.id);
+      tray.addDice(DieDefinition.numeric(8), 1);
+      final ids = tray.dice.map((die) => die.id).toList();
+      final definitions =
+          tray.dice.map((die) => die.definition.toJson()).toList();
+      final values = tray.dice.map((die) => die.value).toList();
+      expect(tray.canResetRollCounts, isTrue);
+      expect(tray.resetRollCounts(), isTrue);
+      expect(tray.dice.map((die) => die.id), ids);
+      expect(tray.dice.map((die) => die.definition.toJson()), definitions);
+      expect(tray.dice.map((die) => die.value), values);
+      expect(tray.dice.every((die) => die.rollCount == 0), isTrue);
+      expect(tray.canResetRollCounts, isFalse);
+      await tray.saved;
+      final writes = store.writes.length;
+      expect(tray.resetRollCounts(), isFalse);
+      await tray.saved;
+      expect(store.writes, hasLength(writes));
+      final restored = TrayController(
+        store: store,
+        roller: (sides) async => sides,
+      );
+      addTearDown(restored.dispose);
+      await restored.load();
+      expect(restored.storageWarning, isNull);
+      expect(restored.dice.map((die) => die.value), values);
+      expect(restored.dice.every((die) => die.rollCount == 0), isTrue);
+      expect(restored.dice.map((die) => die.definition.toJson()), definitions);
+      expect(restored.setName, 'Campaign');
+      expect(restored.savedSets.single.dice, hasLength(5));
+      expect(restored.modified, isTrue);
+      expect(restored.language, 'cs');
+      expect(restored.orientation, TrayOrientation.landscape);
+      await restored.rollDie(restored.dice.first.id);
+      expect(restored.dice.first.rollCount, 1);
+      expect(restored.dice.skip(1).every((die) => die.rollCount == 0), isTrue);
+      await restored.saved;
+    },
+  );
+
+  test('reset counters never races an unfinished roll', () async {
+    Completer<int>? pending;
+    final tray = TrayController(
+      store: MemoryStore(),
+      roller: (_) => pending?.future ?? Future.value(4),
+    );
+    addTearDown(tray.dispose);
+    await tray.load();
+    await tray.rollAll();
+    pending = Completer<int>();
+    final roll = tray.rollDie(tray.dice.first.id);
+    expect(tray.canResetRollCounts, isFalse);
+    expect(tray.resetRollCounts(), isFalse);
+    expect(tray.dice.map((die) => die.rollCount), [1, 1, 1, 1]);
+    pending.complete(4);
+    await roll;
+    expect(tray.dice.map((die) => die.rollCount), [2, 1, 1, 1]);
+    expect(tray.resetRollCounts(), isTrue);
+    expect(tray.dice.map((die) => die.value), [4, 4, 4, 4]);
+    expect(tray.dice.map((die) => die.rollCount), [0, 0, 0, 0]);
+    await tray.saved;
+  });
+
   test('removing a die discards an in-flight result', () async {
     final result = Completer<int>();
     final tray = TrayController(

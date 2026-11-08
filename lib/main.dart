@@ -163,10 +163,17 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
   OrientationLock get _orientationLock => widget.orientationLock;
 
   bool get _canRollAll => !_editing && !_tray.busy && _tray.dice.isNotEmpty;
+  bool get _canResetRollCounts => !_editing && _tray.canResetRollCounts;
 
   void _rollAll() {
     if (_canRollAll && (_route?.isCurrent ?? false)) {
       unawaited(_tray.rollAll());
+    }
+  }
+
+  void _resetRollCounts() {
+    if (_canResetRollCounts && (_route?.isCurrent ?? false)) {
+      _tray.resetRollCounts();
     }
   }
 
@@ -356,6 +363,12 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
                 context.l10n.rollAll,
                 Icons.casino_outlined,
                 _canRollAll ? _rollAll : null,
+              ),
+              option(
+                context.l10n.resetRollCounts,
+                Icons.restart_alt,
+                _canResetRollCounts ? _resetRollCounts : null,
+                key: const ValueKey('reset-roll-counts'),
               ),
               option(context.l10n.addDice, Icons.add, _addDice),
               option(context.l10n.sets, Icons.folder_open_outlined, _pickSet),
@@ -969,6 +982,12 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
         selected: true,
       ),
       _compactAction(
+        context.l10n.resetRollCounts,
+        Icons.restart_alt,
+        _canResetRollCounts ? _resetRollCounts : null,
+        key: const ValueKey('reset-roll-counts'),
+      ),
+      _compactAction(
         context.l10n.addDice,
         Icons.add,
         _addDice,
@@ -1178,6 +1197,12 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
       icon: const Icon(Icons.casino_outlined, size: 20),
       label: Text(context.l10n.rollAll),
     );
+    final reset = OutlinedButton.icon(
+      key: const ValueKey('reset-roll-counts'),
+      onPressed: _canResetRollCounts ? _resetRollCounts : null,
+      icon: const Icon(Icons.restart_alt, size: 20),
+      label: Text(context.l10n.resetRollCounts),
+    );
     final add = OutlinedButton.icon(
       onPressed: _addDice,
       icon: const Icon(Icons.add, size: 20),
@@ -1205,7 +1230,7 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              for (final button in [roll, add, sets, edit, save])
+              for (final button in [roll, reset, add, sets, edit, save])
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: button,
@@ -1216,7 +1241,7 @@ class _DiceTrayPageState extends State<DiceTrayPage> with RouteAware {
         return Wrap(
           spacing: 10,
           runSpacing: 10,
-          children: [roll, add, sets, edit, save],
+          children: [roll, reset, add, sets, edit, save],
         );
       },
     );

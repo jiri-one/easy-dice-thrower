@@ -161,6 +161,10 @@
     }
   },
   "rollAll": "Roll all",
+  "resetRollCounts": "Reset roll counters",
+  "@resetRollCounts": {
+    "description": "Reset only the roll counters, preserving the dice, latest outcomes and saved sets."
+  },
   "@rollAll": {
     "description": "Roll all dice on the current tray."
   },

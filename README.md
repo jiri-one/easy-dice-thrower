@@ -9,6 +9,7 @@ A configurable Flutter dice tray for e-ink screens. Create a tray for your game,
 - Automatic local saving of the current tray, last results and named sets.
 - Tap or click to roll one die; swipe left or right anywhere on the tray to roll all dice. Enter/Space rolls a focused die.
 - A checkmark and roll counter change contrast after every roll, including repeated faces. Pressing a die immediately highlights its outline.
+- **Reset roll counters** starts counting from zero while keeping the dice and their latest results. It is in the portrait menu and the landscape toolbar.
 - Text outcomes have a **Full result** action for reading long labels without rolling again.
 - Czech and English, with a remembered language preference or device language selection.
 

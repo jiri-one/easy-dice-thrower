@@ -36,6 +36,7 @@
   "emptyFooter": "Každou sestavu si můžeš uložit pro příští hru.",
   "diceOnTray": "{count, plural, =0{Na ploše nejsou žádné kostky} =1{1 kostka na ploše} few{{count} kostky na ploše} other{{count} kostek na ploše}} · Sestava i poslední hody se ukládají automaticky.",
   "rollAll": "Hodit všemi",
+  "resetRollCounts": "Vynulovat počítadla",
   "addDice": "Přidat kostky",
   "sets": "Sady",
   "done": "Hotovo",

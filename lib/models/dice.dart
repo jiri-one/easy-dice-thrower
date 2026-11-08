@@ -186,7 +186,7 @@ class TrayDie {
     );
     final value = json['value'] as int?;
     final count = json['rollCount'] as int;
-    if (count < 0 || (value == null ? count != 0 : count == 0)) {
+    if (count < 0 || (value == null && count != 0)) {
       throw const FormatException('Invalid saved roll state.');
     }
     if (value != null) definition.faceFor(value);
